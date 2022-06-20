@@ -1,0 +1,17 @@
+version: '3.3'
+
+networks:
+  default:
+    external:
+      name: proxyNET
+
+services:
+  proxy:
+    image: fproxy
+    container_name: fproxy
+    restart: always
+    ports:
+      - 8090:80
+    volumes:
+      - /HOME/data/fproxy/html:/usr/local/apache2/htdocs
+      - /HOME/data/fproxy/logs:/usr/local/apache2/logs

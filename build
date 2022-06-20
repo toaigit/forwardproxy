@@ -1,0 +1,6 @@
+#!/bin/bash
+#  build
+export USERUID=$(id -u)
+export GROUPID=$(id -g)
+
+docker image build -t fproxy  --build-arg USERUID=$USERUID --build-arg GROUPID=$GROUPID .

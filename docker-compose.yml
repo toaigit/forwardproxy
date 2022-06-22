@@ -13,5 +13,5 @@ services:
     ports:
       - 8090:80
     volumes:
-      - /HOME/data/fproxy/html:/usr/local/apache2/htdocs
-      - /HOME/data/fproxy/logs:/usr/local/apache2/logs
+      - /home/appadmin/data/fproxy/html:/usr/local/apache2/htdocs
+      - /home/appadmin/data/fproxy/logs:/usr/local/apache2/logs

@@ -1,3 +1,11 @@
 #!/bin/bash
 #  startup
+
+docker network inspect proxyNET > /dev/null
+if [ $? -eq 1 ]; then
+  docker network create proxyNET
+fi
+mkdir -p $HOME/data/fproxy/logs
+mkdir -p $HOME/data/fproxy/html
+
 docker-compose -f docker-compose.yml up -d
